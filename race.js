@@ -10,8 +10,8 @@ let ap = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", 
 
 let i = 0;
 runners.forEach((r) => {
-	let api = i > ap.length ? ap[0] : ap[i++];
-	field.insertAdjacentHTML("beforeend", "<li><span class='" + api + "' title='Bench me'>" + r + "</span></li>");
+	let ii = i > ap.length ? 0 : i++;
+	field.insertAdjacentHTML("beforeend", "<li><span class='" + ap[ii] + "' title='Bench me'>" + r + "</span></li>");
 });
 
 let circles = document.querySelectorAll(".s1 span");
