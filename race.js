@@ -1,4 +1,19 @@
+let runners = [];
+if (localStorage.runners) runners = localStorage.runners.split(",");
+else {
+  runners = window.prompt("Enter a comma-delimitted list of runners' initials").split(",").sort();
+  localStorage.runners = runners;
+}
+
 let field = document.querySelector(".s1 ul");
+let ap = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p"];
+
+let i = 0;
+runners.forEach((r) => {
+	let api = i > ap.length ? ap[0] : ap[i++];
+  field.insertAdjacentHTML("beforeend", "<li><span class='" + api + "' title='Bench me'>" + r + "</span></li>");
+});
+
 let circles = document.querySelectorAll(".s1 span");
 let results = document.querySelector(".s2");
 let options = document.querySelectorAll("footer span");
@@ -20,7 +35,7 @@ options.forEach((o) => {
 
 function go() {
   let t = 0;
-	let si1 = setInterval(() => t++, 100);
+  let si1 = setInterval(() => t++, 100);
   document.body.classList.add("underway");
   circles.forEach((c) => {
     if (!c.classList.contains("disabled")) {
