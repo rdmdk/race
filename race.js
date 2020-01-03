@@ -49,8 +49,6 @@ function go() {
 					clearInterval(si1);
 					clearInterval(si2);
 					results.classList.add(document.querySelector("footer .active").innerText.toLowerCase());
-					if (results.classList.contains("first")) results.querySelector("p").classList.add("selected");
-					else results.lastChild.classList.add("selected");
 				} else if (c.offsetLeft + c.clientWidth >= field.clientWidth - 5) {
 					if (!c.classList.contains("finished")) {
 						c.classList.add("finished");
