@@ -1,4 +1,4 @@
-if (window.innerWidth > window.innerHeight) document.body.style.height = window.innerHeight + "px";
+document.body.style.height = window.innerHeight + "px";
 
 let runners = [];
 if (localStorage.runners) runners = localStorage.runners.split(",");
