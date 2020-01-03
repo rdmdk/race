@@ -4,7 +4,7 @@ let runners = window.location.href.indexOf("#") > -1) ? window.location.href.rep
 if (window.location.href.indexOf("#") > -1) {
 	setTimeout(() => window.location.href = window.location.href.replace(/\#.*?$/gm, ""), 100);
 }
-localStorage.runners = runners;
+if (runners) localStorage.runners = runners;
 
 let field = document.querySelector(".s1 ul");
 let ap = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p"];
