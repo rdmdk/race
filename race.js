@@ -1,7 +1,7 @@
 document.body.style.height = window.innerHeight + "px";
 
 let runners = [];
-if (window.location.href.indexOf("#") > -1) {
+if (window.location.href.indexOf("#") > -1 && window.location.href.indexOf(",") > -1) {
 	runners = window.location.href.replace(/.*?\#/gm, "");
 	setTimeout(() => window.location.href = window.location.href.replace(/\#.*?$/gm, ""), 100);
 } else if (localStorage.runners) runners = localStorage.runners;
