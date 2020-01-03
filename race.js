@@ -41,7 +41,7 @@ function go() {
 		if (!c.classList.contains("disabled")) {
 			let e = Math.random().toFixed(2) + "," + Math.random().toFixed(2) + "," + Math.random().toFixed(2) + "," + Math.random().toFixed(2);
 			c.style.transitionTimingFunction = "cubic-bezier(" + e + ")";
-			c.style.transitionDuration = (Math.random() * (15 - 5 + 1) + 5).toFixed(1) + "s";
+			c.style.transitionDuration = (Math.random() * (15 - 5) + 5).toFixed(1) + "s";
 			let si2 = setInterval(() => {
 				if (document.querySelectorAll(".finished").length === document.querySelectorAll(".s1 span:not(.disabled)").length) {
 					clearInterval(si1);
