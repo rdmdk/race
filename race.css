@@ -263,7 +263,7 @@ button {
 }
 
 .underway button {
-	display: none;
+	visibility: hidden;
 }
 
 @media (orientation:landscape) {
