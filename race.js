@@ -1,3 +1,5 @@
+document.body.style.height = window.innerHeight;
+
 let runners = [];
 if (localStorage.runners) runners = localStorage.runners.split(",");
 else {
