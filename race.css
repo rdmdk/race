@@ -26,8 +26,6 @@ table {
 	border-collapse: collapse
 }
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300&display=swap');
-
 body {
 	font: 0 'Open Sans', arial, sans-serif;
 	color: #444;
