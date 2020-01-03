@@ -2,16 +2,17 @@ document.body.style.height = window.innerHeight + "px";
 
 let runners = [];
 if (window.location.href.indexOf("#") > -1) {
-	runners = window.location.href.replace(/.*?\#/gm, "").toUpperCase().split(",").sort();
+	runners = window.location.href.replace(/.*?\#/gm, "");
 	setTimeout(() => window.location.href = window.location.href.replace(/\#.*?$/gm, ""), 100);
 } else if (localStorage.runners) runners = localStorage.runners.split(",");
-else runners = window.prompt("Enter a comma-delimitted list of runners' initials").toUpperCase().split(",").sort();
+else runners = window.prompt("Enter a comma-delimitted list of runners' initials");
 localStorage.runners = runners;
 
 let field = document.querySelector(".s1 ul");
 let ap = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p"];
 
 let i = 0;
+runners.toUpperCase().split(",").sort();
 runners.forEach((r) => {
 	let ii = i > ap.length ? 0 : i++;
 	field.insertAdjacentHTML("beforeend", "<li><span class='" + ap[ii] + "' title='Bench me'>" + r + "</span></li>");
