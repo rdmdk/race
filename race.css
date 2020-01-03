@@ -6,7 +6,6 @@ body {
 	user-select: none;
 	display: grid;
 	grid-template-rows: auto min-content;
-	width: 100vw;
 	height: 100vh;
 	overflow-x: hidden;
 }
