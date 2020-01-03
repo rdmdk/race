@@ -1,30 +1,4 @@
-* {
-	font-size: 1em;
-	line-height: 1em;
-	text-decoration: none;
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-weight: normal
-}
-
-ol,
-ul,
-li {
-	list-style-type: none
-}
-
-table {
-	border-collapse: collapse
-}
+*{font-size:1em;line-height:1em;text-decoration:none;margin:0;padding:0;box-sizing:border-box}h1,h2,h3,h4,h5,h6{font-weight:400}li,ol,ul{list-style-type:none}table{border-collapse:collapse}
 
 body {
 	font: 0 'Open Sans', arial, sans-serif;
@@ -37,30 +11,19 @@ body {
 	overflow-x: hidden;
 }
 
-.underway {
-	pointer-events: none;
-}
+.underway {pointer-events: none}
 
 main {
 	display: flex;
 	padding: 2rem 2rem 0;
 }
 
-.s1 {
-	flex-grow: 1;
-}
+.s1 {flex-grow: 1}
 
-ul {
-	position: relative;
-}
+ul {position: relative}
 
-li {
-	padding: 0.5rem 0;
-}
-
-li~li {
-	border-top: 1px solid #eee;
-}
+li {padding: 0.5rem 0}
+li~li {border-top: 1px solid #eee}
 
 .s1 span {
 	font-size: 1rem;
@@ -77,141 +40,57 @@ li~li {
 	left: 0;
 }
 
-.s1 .disabled {
-	background: #fff;
-}
+.s1 .disabled {background: #fff}
 
-.s1 span[style] {
-	left: calc(100% - 2.5rem);
-}
+.s1 span[style] {left: calc(100% - 2.5rem)}
 
-.a {
-	background: #F44336;
-}
+.a {background: #F44336}
+.a.disabled {color: #f44336}
 
-.a.disabled {
-	color: #f44336;
-}
+.b {background: #E91E63}
+.b.disabled {color: #E91E63}
 
-.b {
-	background: #E91E63;
-}
+.c {background: #9C27B0}
+.c.disabled {color: #9C27B0}
 
-.b.disabled {
-	color: #E91E63;
-}
+.d {background: #673AB7}
+.d.disabled {color: #673AB7}
 
-.c {
-	background: #9C27B0;
-}
+.e {background: #3F51B5}
+.e.disabled {color: #3F51B5}
 
-.c.disabled {
-	color: #9C27B0;
-}
+.f {background: #2196F3}
+.f.disabled {color: #2196F3}
 
-.d {
-	background: #673AB7;
-}
+.g {background: #03A9F4}
+.g.disabled {color: #03A9F4}
 
-.d.disabled {
-	color: #673AB7;
-}
+.h {background: #00BCD4}
+.h.disabled {color: #00BCD4}
 
-.e {
-	background: #3F51B5;
-}
+.i {background: #009688}
+.i.disabled {color: #009688}
 
-.e.disabled {
-	color: #3F51B5;
-}
+.j {background: #4CAF50}
+.j.disabled {color: #4CAF50}
 
-.f {
-	background: #2196F3;
-}
+.k {background: #8BC34A}
+.k.disabled {color: #8BC34A}
 
-.f.disabled {
-	color: #2196F3;
-}
+.l {background: #CDDC39}
+.l.disabled {color: #CDDC39}
 
-.g {
-	background: #03A9F4;
-}
+.m {background: #FFEB3B}
+.m.disabled {color: #FFEB3B}
 
-.g.disabled {
-	color: #03A9F4;
-}
+.n {background: #FFC107}
+.n.disabled {color: #FFC107}
 
-.h {
-	background: #00BCD4;
-}
+.o {background: #FF9800}
+.o.disabled {color: #FF9800}
 
-.h.disabled {
-	color: #00BCD4;
-}
-
-.i {
-	background: #009688;
-}
-
-.i.disabled {
-	color: #009688;
-}
-
-.j {
-	background: #4CAF50;
-}
-
-.j.disabled {
-	color: #4CAF50;
-}
-
-.k {
-	background: #8BC34A;
-}
-
-.k.disabled {
-	color: #8BC34A;
-}
-
-.l {
-	background: #CDDC39;
-}
-
-.l.disabled {
-	color: #CDDC39;
-}
-
-.m {
-	background: #FFEB3B;
-}
-
-.m.disabled {
-	color: #FFEB3B;
-}
-
-.n {
-	background: #FFC107;
-}
-
-.n.disabled {
-	color: #FFC107;
-}
-
-.o {
-	background: #FF9800;
-}
-
-.o.disabled {
-	color: #FF9800;
-}
-
-.p {
-	background: #FF5722;
-}
-
-.p.disabled {
-	color: #FF5722;
-}
+.p {background: #FF5722}
+.p.disabled {color: #FF5722}
 
 .s2 {
 	width: 0;
@@ -224,9 +103,7 @@ li~li {
 	justify-content: space-between;
 }
 
-.s2 .selected {
-	color: #F44336;
-}
+.s2 .selected {color: #F44336}
 
 footer {
 	font-size: 1.5rem;
@@ -239,13 +116,9 @@ footer span {
 	cursor: pointer;
 }
 
-footer .active {
-	color: #F44336
-}
+footer .active {color: #F44336}
 
-.underway footer span:not(.active) {
-	display: none
-}
+.underway footer span:not(.active) {display: none}
 
 button {
 	font: inherit;
@@ -262,45 +135,29 @@ button {
 	cursor: pointer;
 }
 
-.underway button {
-	visibility: hidden;
-}
+.underway button {visibility: hidden}
 
 @media (orientation:landscape) {
-	html {
-		font-size: 1.75vh
-	}
+	html {font-size: 1.75vh}
 
-	.underway .s2 {
-		width: 20%
-	}
+	.underway .s2 {width: 20%}
 
-	.s2 p {
-		margin: 0.5rem 0 1.25rem 3rem;
-	}
+	.s2 p {margin: 0.5rem 0 1.25rem 3rem}
 
 	footer {
 		display: flex;
 		align-items: center;
 	}
 
-	footer span {
-		margin-right: 0.3em;
-	}
+	footer span {margin-right: 0.3em}
 }
 
 @media (orientation:portrait) {
-	html {
-		font-size: 4vw;
-	}
+	html {font-size: 4vw}
 
-	.underway .s2 {
-		width: 45%
-	}
+	.underway .s2 {width: 45%}
 
-	.s2 p {
-		margin: 0.5rem 0 1.25rem 2rem;
-	}
+	.s2 p {margin: 0.5rem 0 1.25rem 2rem}
 
 	button {
 		margin: 1.5rem 0 0;
