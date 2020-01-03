@@ -66,3 +66,6 @@ function go() {
 }
 
 button.addEventListener("click", () => go());
+
+window.addEventListener("resize", () => document.body.style.height = window.innerHeight + "px");
+
