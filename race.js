@@ -1,10 +1,14 @@
 document.body.style.height = window.innerHeight + "px";
 
-let runners = window.location.href.indexOf("#") > -1) ? window.location.href.replace(/.*?\#/gm, "") : localStorage.runners ? localStorage.runners : window.prompt("Enter a comma-delimitted list of runners' initials");
+let runners = [];
 if (window.location.href.indexOf("#") > -1) {
+	runners = window.location.href.replace(/.*?\#/gm, "");
 	setTimeout(() => window.location.href = window.location.href.replace(/\#.*?$/gm, ""), 100);
-}
+} else if (localStorage.runners) runners = localStorage.runners;
+else runners = window.prompt("Enter a comma-delimitted list of runners' initials");
+
 if (runners) localStorage.runners = runners;
+else window.location.reload();
 
 let field = document.querySelector(".s1 ul");
 let ap = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p"];
