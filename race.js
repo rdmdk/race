@@ -3,7 +3,8 @@ document.body.style.height = window.innerHeight + "px";
 let runners = [];
 if (localStorage.runners) runners = localStorage.runners.split(",");
 else {
-	runners = window.prompt("Enter a comma-delimitted list of runners' initials").split(",").sort();
+	if (window.location.href.indexOf("?") > -1) runners = window.location.href.replace(/.*?\?/gm,"").split(",");
+	else runners = window.prompt("Enter a comma-delimitted list of runners' initials").split(",").sort();
 	localStorage.runners = runners;
 }
 
