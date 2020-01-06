@@ -66,6 +66,8 @@ function go() {
 }
 
 button.addEventListener("click", () => go());
-
+window.addEventListener("keypress", (e) => {
+	if (e.which == 13 || e.keyCode == 13) go();
+});
 window.addEventListener("resize", () => document.body.style.height = window.innerHeight + "px");
 
