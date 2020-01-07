@@ -18,7 +18,10 @@ main {
 
 .s1 {flex-grow: 1}
 
-ul {position: relative}
+ul {
+	margin:-0.5rem 0;
+	position: relative;
+}
 
 li {padding: 0.5rem 0}
 li~li {border-top: 1px solid #eee}
