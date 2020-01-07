@@ -25,7 +25,8 @@ runners.forEach((r) => {
 let circles = document.querySelectorAll(".s1 span");
 let results = document.querySelector(".s2");
 let options = document.querySelectorAll("footer span");
-let button = document.querySelector("button");
+let edit = document.querySelector(".edit");
+let go = document.querySelector(".go");
 
 circles.forEach((c) => {
 	c.addEventListener("click", () => {
@@ -40,7 +41,9 @@ options.forEach((o) => {
 		o.classList.add("active");
 	});
 });
-
+function edit() {
+	localStorage.runners = window.prompt("Enter a comma-delimitted list of runners' initials", localStorage.runners);
+}
 function go() {
 	let t = 0;
 	let si1 = setInterval(() => t++, 100);
@@ -66,8 +69,8 @@ function go() {
 		}
 	});
 }
-
-button.addEventListener("click", () => go());
+edit.addEventListener("click", () => edit());
+go.addEventListener("click", () => go());
 window.addEventListener("keypress", (e) => {
 	if (e.which == 13 || e.keyCode == 13) go();
 });
