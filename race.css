@@ -141,6 +141,8 @@ button {
 @media (orientation:landscape) {
 	html {font-size: 1.75vh}
 	
+	body {height: 100vh}
+	
 	.underway .s2 {width: 20%}
 
 	.s2 p {margin: 0.5rem 0 1.25rem 3rem}
