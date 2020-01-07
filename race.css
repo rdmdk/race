@@ -124,15 +124,21 @@ button {
 	font: inherit;
 	font-size: 1.5rem;
 	line-height: 2.25rem;
-	background: #F44336;
-	color: #fff;
 	width: 4rem;
 	height: 4rem;
-	margin-left: auto;
 	border: none;
 	outline: none;
 	border-radius: 100%;
 	cursor: pointer;
+}
+.edit {
+	color: #ccc;
+	margin-left:auto;
+}
+.go {
+	background: #F44336;
+	color: #fff;
+	margin-left: 1rem;
 }
 
 .underway button {visibility: hidden}
