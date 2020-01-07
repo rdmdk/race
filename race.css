@@ -160,7 +160,7 @@ button {
 	
 	.underway .s2 {width: 20%}
 	
-	.s2 p {margin: 0.5rem 0 1.25rem 3rem}
+	.s2 p {margin: 0 0 1.25rem 3rem}
 
 	footer {
 		display: flex;
@@ -175,7 +175,7 @@ button {
 
 	.underway .s2 {width: 45%}
 		
-	.s2 p {margin: 0.5rem 0 1.25rem 2rem}
+	.s2 p {margin: 0 0 1.25rem 2rem}
 	
 	button {
 		transition: height 1s ease, margin 1s ease;
