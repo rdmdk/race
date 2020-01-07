@@ -95,6 +95,11 @@ li~li {border-top: 1px solid #eee}
 	transition: width 3s ease-in-out;
 }
 
+.underway .s2 div {
+	position: sticky;
+	top: 2.5rem;
+}
+
 .s2 p {
 	font-size: 1.5rem;
 	display: flex;
@@ -152,11 +157,6 @@ button {
 	
 	.underway .s2 {width: 20%}
 	
-	.underway .s2 div {
-		position: sticky;
-		top: 2.5rem;
-	}
-
 	.s2 p {margin: 0.5rem 0 1.25rem 3rem}
 
 	footer {
@@ -171,7 +171,7 @@ button {
 	html {font-size: 4vw}
 
 	.underway .s2 {width: 45%}
-
+		
 	.s2 p {margin: 0.5rem 0 1.25rem 2rem}
 	
 	button {
