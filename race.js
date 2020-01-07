@@ -55,9 +55,9 @@ function go() {
 	circles.forEach((c) => {
 		if (!c.classList.contains("disabled")) {
 			let e = Math.random().toFixed(2) + "," + Math.random().toFixed(2) + "," + Math.random().toFixed(2) + "," + Math.random().toFixed(2);
-			let d = c.classList.contains("avg") ? Math.random() * (12 - 8) + 8 : Math.random() * (15 - 5) + 5;
+			let d = (Math.random() * (15 - 5) + 5).toFixed(1);
 			c.style.transitionTimingFunction = "cubic-bezier(" + e + ")";
-			c.style.transitionDuration = d.toFixed(1) + "s";
+			c.style.transitionDuration = d + "s";
 			let si2 = setInterval(() => {
 				if (document.querySelectorAll(".finished").length === document.querySelectorAll(".s1 span:not(.disabled)").length) {
 					clearInterval(si1);
