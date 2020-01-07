@@ -150,10 +150,11 @@ button {
 	
 	body {height: 100vh}
 	
-	.underway .s2 {
-		width: 20%;
+	.underway .s2 {width: 20%}
+	
+	.underway .s2 div {
 		position: sticky;
-		top: 0;
+		top: 2.5rem;
 	}
 
 	.s2 p {margin: 0.5rem 0 1.25rem 3rem}
@@ -172,13 +173,16 @@ button {
 	.underway .s2 {width: 45%}
 
 	.s2 p {margin: 0.5rem 0 1.25rem 2rem}
+	
 	button {
 		transition: height 1s ease, margin 1s ease;
 		display: block;
 	}
 	.edit,
 	.go {margin: 1rem 0 0}
+	
 	.underway button {height: 0}
+	
 	.underway .edit,
 	.underway .go {margin: 0}
 }
