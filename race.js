@@ -25,8 +25,8 @@ runners.forEach((r) => {
 let circles = document.querySelectorAll(".s1 span");
 let results = document.querySelector(".s2");
 let options = document.querySelectorAll("footer span");
-let edit = document.querySelector(".edit");
-let go = document.querySelector(".go");
+let editbutton = document.querySelector(".edit");
+let gobutton = document.querySelector(".go");
 
 circles.forEach((c) => {
 	c.addEventListener("click", () => {
@@ -69,8 +69,8 @@ function go() {
 		}
 	});
 }
-edit.addEventListener("click", () => edit());
-go.addEventListener("click", () => go());
+editbutton.addEventListener("click", () => edit());
+gobutton.addEventListener("click", () => go());
 window.addEventListener("keypress", (e) => {
 	if (e.which == 13 || e.keyCode == 13) go();
 });
