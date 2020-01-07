@@ -1,4 +1,4 @@
-document.body.style.height = window.innerHeight + "px";
+if (window.innerWidth >= window.innerHeight) document.body.style.height = window.innerHeight + "px";
 
 let runners = [];
 if (window.location.href.indexOf("#") > -1 && window.location.href.indexOf(",") > -1) {
@@ -14,7 +14,7 @@ let field = document.querySelector(".s1 ul");
 let ap = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p"];
 
 let i = 0;
-runners = runners.toUpperCase().split(",").sort();
+runners = runners.toUpperCase().split(",").sort((a, b) => a - b);
 runners.forEach((r) => {
 	let ii = i > ap.length ? 0 : i++;
 	field.insertAdjacentHTML("beforeend", "<li><span class='" + ap[ii] + "' title='Bench me'>" + r + "</span></li>");
