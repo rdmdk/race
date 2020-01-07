@@ -1,4 +1,4 @@
-if (window.innerWidth >= window.innerHeight) document.body.style.height = window.innerHeight + "px";
+if (window.innerHeight > window.innerWidth) document.body.style.height = window.innerHeight + "px";
 
 let runners = [];
 if (window.location.href.indexOf("#") > -1 && window.location.href.indexOf(",") > -1) {
