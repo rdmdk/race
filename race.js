@@ -17,7 +17,7 @@ let i = 0;
 runners = runners.toUpperCase().split(",").sort().sort((a, b) => a - b);
 runners.forEach((r) => {
 	ii = i++;
-	if (ii >= ap.length - 0) i = 0;
+	if (ii >= ap.length - 0) ii = 0;
 	field.insertAdjacentHTML("beforeend", "<li><span class='" + ap[ii] + "' title='Bench me'>" + r + "</span></li>");
 });
 
