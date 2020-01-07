@@ -66,7 +66,7 @@ function go() {
 					if (!c.classList.contains("finished")) {
 						c.classList.add("finished");
 						if (results.innerText.indexOf(t / 10) > -1) t++;
-						results.insertAdjacentHTML("beforeend", "<p>" + c.innerText + "<span>" + (t / 10) + "s</span></p>");
+						results.querySelector("div").insertAdjacentHTML("beforeend", "<p>" + c.innerText + "<span>" + (t / 10) + "s</span></p>");
 					}
 				}
 			}, 100);
