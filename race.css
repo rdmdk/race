@@ -167,8 +167,9 @@ button {
 	.underway .s2 {width: 45%}
 
 	.s2 p {margin: 0.5rem 0 1.25rem 2rem}
-
-	button {
+	.edit {
+		margin: 0;
+	.go {
 		margin: 1.5rem 0 0;
 		display: block;
 	}
