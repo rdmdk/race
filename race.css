@@ -3,7 +3,6 @@
 body {
 	font: 0 'Open Sans', arial, sans-serif;
 	color: #444;
-	height: 100vh;
 	user-select: none;
 	display: grid;
 	grid-template-rows: auto min-content;
