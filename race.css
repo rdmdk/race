@@ -169,16 +169,12 @@ button {
 
 	.s2 p {margin: 0.5rem 0 1.25rem 2rem}
 	button {
-		transition: opacity 1s ease, height 1s ease, margin 1s ease;
-		transition-delay: 0s, 1s, 1s;
+		transition: height 1s ease, margin 1s ease;
 		display: block;
 	}
 	.edit,
 	.go {margin: 1rem 0 0}
-	.underway button {
-		opacity: 0;
-		height: 0;
-	}
+	.underway button {height: 0}
 	.underway .edit,
 	.underway .go {margin: 0}
 }
