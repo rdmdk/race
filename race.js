@@ -5,7 +5,15 @@ if (window.location.href.indexOf("#") > -1 && window.location.href.indexOf(",") 
 	runners = window.location.href.replace(/.*?\#/gm, "");
 	setTimeout(() => window.location.href = window.location.href.replace(/\#.*?$/gm, ""), 100);
 } else if (localStorage.runners) runners = localStorage.runners;
-else runners = window.prompt("Enter a comma-delimitted list of runners' initials");
+else {
+	var input = window.prompt("Enter a comma-delimitted list of runners' initials");
+	if (input !== null) {
+		if (input === "abc") runners = "a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z";
+		else if (input === "123") runners = "1,2,3,4,5,6,7,8,9,10";
+		else if (input === "ci") runners = "da,alg,sw,jl,sl,ac,li,mt,vz,mf,ba,on,rd";
+		else runners = input;
+	}
+}
 
 if (runners) localStorage.runners = runners;
 else window.location.reload();
