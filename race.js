@@ -77,7 +77,10 @@ function go() {
 editbutton.addEventListener("click", () => edit());
 gobutton.addEventListener("click", () => go());
 window.addEventListener("keypress", (e) => {
-	if (e.which == 13 || e.keyCode == 13) go();
+	if (e.which == 13 || e.keyCode == 13) {
+		if (document.body.className === "underway") window.location.reload();
+		else go();
+	}
 });
 window.addEventListener("resize", () => document.body.style.height = window.innerHeight + "px");
 
