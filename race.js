@@ -10,7 +10,7 @@ else {
 	if (input !== null) {
 		if (input === "abc") runners = "a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z";
 		else if (input === "123") runners = "1,2,3,4,5,6,7,8,9,10";
-		else if (input === "ci") runners = "da,alg,sw,jl,sl,ac,li,mt,vz,mf,ba,on,rd";
+		else if (input === "ci") runners = "da,alg,sw,jl,sl,ac,li,mt,vz,mf,ba,on,rd,dl";
 		else runners = input;
 	}
 }
