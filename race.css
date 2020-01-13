@@ -19,6 +19,7 @@ main {
 .s1 {flex-grow: 1}
 
 ul {
+	height: 100%;
 	margin: 0;
 	display: flex;
 	flex-direction: column;
