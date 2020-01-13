@@ -27,7 +27,11 @@ ul {
 	position: relative;
 }
 
-li {flex-grow: 1}
+li {
+	padding: 0.5rem 0;
+	flex-grow: 1;
+}
+
 li~li {border-top: 1px solid #eee}
 li:first-child{padding-top: 0}
 li:last-child{padding-bottom: 0}
