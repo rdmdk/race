@@ -57,7 +57,7 @@ options.forEach((o) => {
 });
 function edit() {
 	var newrunners = window.prompt("Enter a comma-delimitted list of runners' initials", localStorage.runners);
-	if (newrunners != null) {
+	if (newrunners != null && newrunners !== localStorage.runners) {
 		localStorage.runners = newrunners;
 		window.location.reload();
 	}
