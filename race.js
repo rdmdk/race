@@ -9,7 +9,10 @@ else {
 	var input = window.prompt("Enter a comma-delimitted list of runners' initials");
 	if (input !== null) {
 		if (input.match(/^[0-9]+/gm)) {
-			console.log(input);
+			var t = parseInt(t);
+			for (var i = 0; i < t; i++) {
+				runners += i + ",";
+			}
 		} else {
 			if (input === "abc") runners = "a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z";
 			else if (input === "ci") runners = "ac,alg,ba,da,dl,jl,li,mf,mt,on,rd,sl,sw,vz";
