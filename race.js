@@ -8,7 +8,7 @@ if (window.location.href.indexOf("#") > -1 && window.location.href.indexOf(",") 
 else {
 	let input = window.prompt("Enter a comma-delimitted list of runners' initials");
 	if (input !== null) {
-		if (input.match(/^[0-9]+$/gm)) {
+		if (input.indexOf(/[0-9]/g) > -1 && input.indexOf(/[A-Za-z]/g) === -1) {
 			let t = parseInt(input);
 			for (let ti = 1; ti <= t; ti++) {
 				runners += ti + ",";
