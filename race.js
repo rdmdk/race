@@ -70,7 +70,7 @@ function go() {
 	circles.forEach((c) => {
 		if (!c.classList.contains("disabled")) {
 			let mn = 4;
-			let mx = mn * circles.length;
+			let mx = (mn * circles.length) / 2;
 			let e = Math.random().toFixed(2) + "," + Math.random().toFixed(2) + "," + Math.random().toFixed(2) + "," + Math.random().toFixed(2);
 			let d = (Math.random() * (mx - mn) + mn).toFixed(1);
 			c.style.transitionTimingFunction = "cubic-bezier(" + e + ")";
