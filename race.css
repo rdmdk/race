@@ -19,12 +19,17 @@ main {
 .s1 {flex-grow: 1}
 
 ul {
-	margin:-0.5rem 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
 	position: relative;
 }
 
-li {padding: 0.5rem 0}
+li {flex-grow: 1}
 li~li {border-top: 1px solid #eee}
+li:first-child{padding-top: 0}
+li:last-child{padding-bottom: 0}
 
 .s1 span {
 	font-size: 1rem;
@@ -37,7 +42,9 @@ li~li {border-top: 1px solid #eee}
 	display: block;
 	cursor: pointer;
 	transition: left 15s linear;
+	transform: translate(0, -50%);
 	position: relative;
+	top: 50%;
 	left: 0;
 }
 
