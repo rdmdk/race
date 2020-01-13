@@ -8,10 +8,13 @@ if (window.location.href.indexOf("#") > -1 && window.location.href.indexOf(",") 
 else {
 	var input = window.prompt("Enter a comma-delimitted list of runners' initials");
 	if (input !== null) {
-		if (input === "abc") runners = "a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z";
-		else if (input === "123") runners = "1,2,3,4,5,6,7,8,9,10";
-		else if (input === "ci") runners = "ac,alg,ba,da,dl,jl,li,mf,mt,on,rd,sl,sw,vz";
-		else runners = input;
+		if (input.match(/^[0-9]+/gm)) {
+			console.log(input);
+		} else {
+			if (input === "abc") runners = "a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z";
+			else if (input === "ci") runners = "ac,alg,ba,da,dl,jl,li,mf,mt,on,rd,sl,sw,vz";
+			else runners = input;
+		}
 	}
 }
 
