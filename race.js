@@ -10,7 +10,8 @@ else {
 	if (input !== null) {
 		if (input.match(/^[0-9]+$/gm)) {
 			let t = parseInt(input);
-			for (let ti = 0; ti < t; ti++) {
+			let ti;
+			for (ti = 0; ti <= t; ti++) {
 				runners += ti + ",";
 			}
 		} else {
