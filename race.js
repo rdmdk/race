@@ -80,7 +80,7 @@ function go() {
 					clearInterval(si1);
 					clearInterval(si2);
 					results.classList.add(document.querySelector("footer .active").innerText.toLowerCase());
-				} else if (c.offsetLeft + c.clientWidth >= field.clientWidth - 5) {
+				} else if (c.offsetLeft + c.clientWidth >= field.clientWidth - 2) {
 					if (!c.classList.contains("finished")) {
 						c.classList.add("finished");
 						if (results.innerText.indexOf(t / 10) > -1) t++;
