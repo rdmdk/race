@@ -1,29 +1,31 @@
 if (window.innerHeight > window.innerWidth) document.body.style.height = window.innerHeight + "px";
 
-let runners = [];
+let runners;
+
+function newrunners(a) {
+	if (a.match(/^[0-9]+$/g)) {
+		let t = parseInt(a);
+		for (let i = 1; i <= t; i++) {
+			runners += i + ",";
+		}
+	} else {
+		if (a === "abc") runners = "a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z";
+		else if (a === "periodic") runners = "h,he,li,be,b,c,n,o,f,ne,na,mg,al,si,p,s,cl,ar,k,ca,sc,ti,v,cr,mn,fe,co,ni,cu,zn,ga,ge,as,se,br,kr,rb,sr,y,zr,nb,mo,tc,ru,rh,pd,ag,cd,in,sn,sb,te,i,xe,cs,ba,la,ce,pr,nd,pm,sm,eu,gd,tb,dy,ho,er,tm,yb,lu,hf,ta,w,re,os,ir,pt,au,hg,tl,pb,bi,po,at,rn,fr,ra,ac,th,pa,u,np,pu,am,cm,bk,cf,es,fm,md,no,lr,rf,db,sg,bh,hs,mt,ds,rg,cn,nh,fl,mc,lv,ts,og";
+		else if (a === "ci") runners = "ac,alg,ba,da,dl,jl,li,mf,mt,on,rd,sl,sw,vz";
+		else runners = a;
+	}
+	localStorage.runners = runners;
+	window.location.reload();
+}
+
 if (window.location.href.indexOf("#") > -1 && window.location.href.indexOf(",") > -1) {
-	runners = window.location.href.replace(/.*?\#/gm, "");
+	localStorage.runners = window.location.href.replace(/.*?\#/gm, "");
 	setTimeout(() => window.location.href = window.location.href.replace(/\#.*?$/gm, ""), 100);
 } else if (localStorage.runners) runners = localStorage.runners;
 else {
 	let input = window.prompt("Enter a comma-delimitted list of runners' initials");
-	if (input !== null) {
-		if (input.match(/^[0-9]+$/g)) {
-			let t = parseInt(input);
-			for (let ti = 1; ti <= t; ti++) {
-				runners += ti + ",";
-			}
-		} else {
-			if (input === "abc") runners = "a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z";
-			else if (input === "periodic") runners = "h,he,li,be,b,c,n,o,f,ne,na,mg,al,si,p,s,cl,ar,k,ca,sc,ti,v,cr,mn,fe,co,ni,cu,zn,ga,ge,as,se,br,kr,rb,sr,y,zr,nb,mo,tc,ru,rh,pd,ag,cd,in,sn,sb,te,i,xe,cs,ba,la,ce,pr,nd,pm,sm,eu,gd,tb,dy,ho,er,tm,yb,lu,hf,ta,w,re,os,ir,pt,au,hg,tl,pb,bi,po,at,rn,fr,ra,ac,th,pa,u,np,pu,am,cm,bk,cf,es,fm,md,no,lr,rf,db,sg,bh,hs,mt,ds,rg,cn,nh,fl,mc,lv,ts,og";
-			else if (input === "ci") runners = "ac,alg,ba,da,dl,jl,li,mf,mt,on,rd,sl,sw,vz";
-			else runners = input;
-		}
-	}
+	if (input !== null) newrunners(input);
 }
-
-if (runners) localStorage.runners = runners;
-else window.location.reload();
 
 let field = document.querySelector(".s1 ul");
 let ap = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p"];
@@ -57,11 +59,8 @@ options.forEach((o) => {
 	});
 });
 function edit() {
-	var newrunners = window.prompt("Enter a comma-delimitted list of runners' initials", localStorage.runners);
-	if (newrunners != null && newrunners !== localStorage.runners) {
-		localStorage.runners = newrunners;
-		window.location.reload();
-	}
+	let newinput = window.prompt("Enter a comma-delimitted list of runners' initials", localStorage.runners);
+	if (newinput != null && newinput !== localStorage.runners) newrunners(newinput);
 }
 function go() {
 	let t = 0;
