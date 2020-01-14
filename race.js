@@ -3,6 +3,7 @@ if (window.innerHeight > window.innerWidth) document.body.style.height = window.
 let runners;
 
 function newrunners(a) {
+	runners = "";
 	if (a.match(/^[0-9]+$/g)) {
 		let t = parseInt(a);
 		for (let i = 1; i <= t; i++) {
