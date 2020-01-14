@@ -33,6 +33,7 @@ let ap = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", 
 
 let i = 0;
 runners = runners.toUpperCase().split(",").filter(Boolean).sort().sort((a, b) => a - b);
+runners = [...(new Set(runners))];
 runners.forEach((r) => {
 	var ii;
 	if (i >= ap.length) i = 0;
