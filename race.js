@@ -32,9 +32,9 @@ let field = document.querySelector(".s1 ul");
 let ap = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p"];
 
 let i = 0;
-runners = runners.toUpperCase().split(",").filter(Boolean).sort().sort((a, b) => a - b);
+runners = runners.split(",").filter(Boolean).sort().sort((a, b) => a - b);
 runners = [...(new Set(runners))];
-localStorage.runners = runners.toString().toLowerCase();
+localStorage.runners = runners.toString();
 runners.forEach((r) => {
 	var ii;
 	if (i >= ap.length) i = 0;
