@@ -66,13 +66,11 @@ function edit() {
 function go() {
 	let t = 0;
 	let si1 = setInterval(() => t++, 100);
-	let mn = 4;
-	let mx = (mn * document.querySelectorAll(".s1 span:not(.disabled)").length) / 1.5;
 	document.body.classList.add("underway");
 	circles.forEach((c) => {
 		if (!c.classList.contains("disabled")) {
 			let e = Math.random().toFixed(2) + "," + Math.random().toFixed(2) + "," + Math.random().toFixed(2) + "," + Math.random().toFixed(2);
-			let d = (Math.random() * (mx - mn) + mn).toFixed(1);
+			let d = (Math.random() * (30 - 10) + 10).toFixed(1);
 			c.style.transitionTimingFunction = "cubic-bezier(" + e + ")";
 			c.style.transitionDuration = d + "s";
 			let si2 = setInterval(() => {
