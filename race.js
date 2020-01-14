@@ -14,7 +14,7 @@ function newrunners(a) {
 		else if (a === "ci") runners = "ac,alg,ba,da,dl,jl,li,mf,mt,on,rd,sl,sw,vz";
 		else runners = a;
 	}
-	localStorage.runners = runners;
+	localStorage.runners = runners.replace(/^\,|\,\,|\,$/gm, "");
 	window.location.reload();
 }
 
