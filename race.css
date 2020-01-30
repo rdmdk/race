@@ -13,7 +13,7 @@ body {
 
 main {
 	display: flex;
-	padding: 2rem 2rem 0;
+	padding: 2rem;
 }
 
 .s1 {flex-grow: 1}
