@@ -28,7 +28,8 @@ ul {
 }
 
 li {
-	padding: 0.5rem 0;
+	font-size: calc(1rem / 15);
+	padding: 10em 0;
 	flex-grow: 1;
 }
 
@@ -37,13 +38,13 @@ li:first-child{padding-top: 0}
 li:last-child{padding-bottom: 0}
 
 .s1 span {
-	font-size: 1rem;
-	line-height: 2.5rem;
+	font-size: 11em;
+	line-height: 2.75em;
 	text-align: center;
 	text-transform:uppercase;
 	color: #fff;
-	width: 2.5rem;
-	height: 2.5rem;
+	width: 2.75em;
+	height: 2.75em;
 	border-radius: 100%;
 	display: block;
 	cursor: pointer;
