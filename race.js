@@ -35,6 +35,7 @@ let i = 0;
 runners = runners.split(",").filter(Boolean).sort().sort((a, b) => a - b);
 runners = [...(new Set(runners))];
 localStorage.runners = runners.toString();
+field.style.fontSize = "calc(1rem / " + runners.length + ")";
 runners.forEach((r) => {
 	var ii;
 	if (i >= ap.length) i = 0;
