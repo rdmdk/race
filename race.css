@@ -58,7 +58,7 @@ li:last-child{padding-bottom: 0}
 
 .s1 .disabled {background: #fff}
 
-.s1 span[style] {left: calc(100% - 2.75em)}
+.s1 span[style] {left: calc(100% - 3em)}
 
 .a {background: #F44336}
 .a.disabled {color: #f44336}
