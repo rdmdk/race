@@ -28,7 +28,6 @@ ul {
 }
 
 li {
-	font-size: calc(1rem / 15);
 	padding: 10em 0;
 	flex-grow: 1;
 }
