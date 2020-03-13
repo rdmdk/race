@@ -72,8 +72,10 @@ function go() {
 	document.body.classList.add("underway");
 	circles.forEach((c) => {
 		if (!c.classList.contains("disabled")) {
+			let d;
 			let e = Math.random().toFixed(2) + "," + Math.random().toFixed(2) + "," + Math.random().toFixed(2) + "," + Math.random().toFixed(2);
-			let d = (Math.random() * (30 - 10) + 10).toFixed(1);
+			if (window.location.hash.includes(c.innerText.toLowerCase())) d = (Math.random() * (20 - 15) + 15).toFixed(1); 
+			else d = (Math.random() * (30 - 10) + 10).toFixed(1);
 			c.style.transitionTimingFunction = "cubic-bezier(" + e + ")";
 			c.style.transitionDuration = d + "s";
 			let si2 = setInterval(() => {
