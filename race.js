@@ -40,7 +40,7 @@ runners.forEach((r) => {
 	var ii;
 	if (i >= ap.length) i = 0;
 	ii = i++;
-	field.insertAdjacentHTML('beforeend', '<li><span class='' + ap[ii] + '' title='Bench me'>' + r + '</span></li>');
+	field.insertAdjacentHTML('beforeend', '<li><span class="' + ap[ii] + '" title="Bench me">' + r + '</span></li>');
 });
 
 let circles = document.querySelectorAll('.s1 span');
