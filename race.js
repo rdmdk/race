@@ -63,7 +63,7 @@ options.forEach((o) => {
 	});
 });
 function edit() {
-	let newinput = window.prompt('Enter a comma-delimitted list of runners' initials', localStorage.runners);
+	let newinput = window.prompt('Enter a comma-delimitted list of runners\' initials', localStorage.runners);
 	if (newinput != null && newinput !== localStorage.runners) newrunners(newinput);
 }
 function go() {
