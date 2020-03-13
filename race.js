@@ -20,7 +20,7 @@ function newrunners(a) {
 }
 
 if (window.location.href.indexOf('?') > -1 && window.location.href.indexOf(',') > -1) {
-	localStorage.runners = window.location.href.replace(/\?.*?\#/gm, '');
+	localStorage.runners = window.location.href.replace(/\?.*?\$/gm, '');
 	setTimeout(() => window.location.href = window.location.href.replace(/\?.*?$/gm, ''), 100);
 } else if (localStorage.runners) runners = localStorage.runners;
 else {
