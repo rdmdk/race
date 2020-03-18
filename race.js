@@ -59,9 +59,6 @@ circles.forEach((c) => {
 	c.addEventListener('mouseenter', (e) => {
 		if (e.buttons) update(c);
 	});
-	c.addEventListener('mouseleave', (e) => {
-		if (e.buttons) update(c);
-	});
 });
 
 options.forEach((o) => {
