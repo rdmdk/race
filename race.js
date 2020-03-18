@@ -49,18 +49,19 @@ let options = document.querySelectorAll('footer span');
 let editbutton = document.querySelector('.edit');
 let gobutton = document.querySelector('.go');
 
-function update(c) {
-	c.classList.toggle('disabled');
-	c.title = c.classList.contains('disabled') ? 'Put me back in' : 'Bench me';
+function update(a) {
+	a.classList.toggle('disabled');
+	a.title = a.classList.contains('disabled') ? 'Put me back in' : 'Bench me';
 }
 
 circles.forEach((c) => {
 	c.addEventListener('click', () => update(c));
 	c.addEventListener('mouseenter', (e) => {
-		console.log(e);
-		update(c);
+		if (e.buttons) update(c);
 	});
-	//c.addEventListener('mouseleave', (e) => update(c));
+	c.addEventListener('mouseleave', (e) => {
+		if (e.buttons) update(c);
+	});
 });
 
 options.forEach((o) => {
