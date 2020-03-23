@@ -102,7 +102,7 @@ function go() {
 editbutton.addEventListener('click', () => edit());
 gobutton.addEventListener('click', () => go());
 window.addEventListener('keypress', (e) => {
-	if ((e.which || e.keyCode) == (13 || 32)) {
+	if ((e.which || e.keyCode) == 13 || (e.which || e.keyCode) == 32) {
 		e.preventDefault();
 		if (document.body.className === 'underway') window.location.reload();
 		else go();
