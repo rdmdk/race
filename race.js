@@ -24,7 +24,7 @@ if (window.location.href.indexOf('?') > -1 && window.location.href.indexOf(',') 
 	setTimeout(() => window.location.href = window.location.href.replace(/\?.*?$/gm, ''), 100);
 } else if (localStorage.runners) runners = localStorage.runners;
 else {
-	let input = window.prompt('Enter a comma-delimitted list of runners\' initials');
+	let input = window.prompt('Enter a comma-delimited list of runners\' initials');
 	if (input !== null) newrunners(input);
 }
 
