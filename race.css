@@ -28,7 +28,6 @@ ul {
 }
 
 li {
-	padding: 8em 0;
 	flex: 1;
 	display: flex;
 	align-items: center;
