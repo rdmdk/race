@@ -31,6 +31,7 @@ ul {
 li {
 	padding: 8em 0;
 	flex-grow: 1;
+	display: flex;
 }
 
 li~li {border-top: 1px solid #eee}
@@ -50,9 +51,7 @@ li:last-child{padding-bottom: 0}
 	cursor: pointer;
 	will-change: left;
 	transition: left 15s linear;
-	transform: translate(0, -50%);
 	position: relative;
-	top: 50%;
 	left: 0;
 }
 
