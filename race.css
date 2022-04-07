@@ -15,9 +15,10 @@ main {display: flex}
 
 section {padding: 2rem}
 
-.s1 {flex-grow: 1}
-
-.s2 {padding-left: 0}
+.s1 {
+	padding-right: 0;
+	flex-grow: 1;
+}
 
 ul {
 	font-size: 1rem;
