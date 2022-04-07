@@ -116,7 +116,7 @@ li:last-child{padding-bottom: 0}
 
 .underway .s2 div {
 	position: sticky;
-	top: 2rem;
+	top: 0;
 }
 
 .s2 p {
