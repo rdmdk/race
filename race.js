@@ -19,9 +19,9 @@ function newrunners(a) {
 	window.location.reload();
 }
 
-if (window.location.href.indexOf('?') > -1 && window.location.href.indexOf(',') > -1) {
-	localStorage.runners = window.location.href.replace(/.*?\?/gm, '');
-	setTimeout(() => window.location.href = window.location.href.replace(/\?.*?$/gm, ''), 100);
+if (window.location.search && window.location.search !== '?') {
+	runners = window.location.search.substring(1);
+	window.location.search = '';
 } else if (localStorage.runners) runners = localStorage.runners;
 else {
 	let input = window.prompt('Enter a comma-delimited list of runners\' initials');
@@ -32,7 +32,7 @@ let field = document.querySelector('.s1 ul');
 let ap = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p'];
 
 let i = 0;
-runners = runners.split(',').filter(Boolean).sort().sort((a, b) => a - b);
+runners = runners.split(',').filter(Boolean).sort();
 runners = [...(new Set(runners))];
 localStorage.runners = runners.toString();
 field.style.fontSize = 'calc(1rem / ' + runners.length + ')';
