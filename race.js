@@ -16,13 +16,13 @@ function newrunners(a) {
 	localStorage.runners = runners.replace(/^\,|\,$/gm, '').replace(/\,\,+/gm, ',');
 	if (window.location.hash) window.location.hash = '';
 	if (window.location.search) window.location.search = '';
-	window.location.reload();
+	window.location.href = window.location.origin + '/race';
 }
 
 if (window.location.hash && window.location.hash !== '#') newrunners(window.location.hash.substring(1));
 else if (window.location.search && window.location.search !== '?') newrunners(window.location.search.substring(1));
 else if (localStorage.runners) runners = localStorage.runners;
-else {
+else if (!runners.length) {
 	let input = window.prompt('Enter a comma-delimited list of runners\' initials');
 	if (input !== null) newrunners(input);
 }
