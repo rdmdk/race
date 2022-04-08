@@ -22,7 +22,7 @@ function newrunners(a) {
 if (window.location.hash && window.location.hash !== '#') newrunners(window.location.hash.substring(1));
 else if (window.location.search && window.location.search !== '?') newrunners(window.location.search.substring(1));
 else if (localStorage.runners) runners = localStorage.runners;
-else if (!runners.length) {
+else {
 	let input = window.prompt('Enter a comma-delimited list of runners\' initials');
 	if (input !== null) newrunners(input);
 }
