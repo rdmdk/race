@@ -13,7 +13,7 @@ function newrunners(a) {
 			runners += i + ',';
 		}
 	} else runners = a;
-	localStorage.runners = runners.replace(/^\,|\,$/gm, '').replace(/\,\,+/gm, ',');
+	localStorage.runners = runners;
 	if (window.location.hash) window.location.hash = '';
 	if (window.location.search) window.location.search = '';
 	window.location.href = window.location.origin + '/race';
