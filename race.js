@@ -36,7 +36,7 @@ runners = runners.split(',').filter(Boolean).sort();
 runners = [...(new Set(runners))];
 localStorage.runners = runners.toString();
 field.style.fontSize = 'calc(1rem / ' + runners.length + ')';
-runners.forEach((r) => {
+runners.forEach(r => {
 	var ii;
 	if (i >= ap.length) i = 0;
 	ii = i++;
@@ -54,14 +54,14 @@ function update(a) {
 	a.title = a.classList.contains('disabled') ? 'Put me back in' : 'Bench me';
 }
 
-circles.forEach((c) => {
+circles.forEach(c => {
 	c.addEventListener('click', () => update(c));
-	c.addEventListener('mouseenter', (e) => {
+	c.addEventListener('mouseenter', e => {
 		if (e.buttons) update(c);
 	});
 });
 
-options.forEach((o) => {
+options.forEach(o => {
 	o.addEventListener('click', () => {
 		document.querySelector('footer .active').classList.remove('active');
 		o.classList.add('active');
@@ -75,7 +75,7 @@ function go() {
 	let t = 0;
 	let si1 = setInterval(() => t++, 100);
 	document.body.classList.add('underway');
-	circles.forEach((c) => {
+	circles.forEach(c => {
 		if (!c.classList.contains('disabled')) {
 			let d;
 			let e = Math.random().toFixed(2) + ',' + Math.random().toFixed(2) + ',' + Math.random().toFixed(2) + ',' + Math.random().toFixed(2);
@@ -101,7 +101,7 @@ function go() {
 }
 editbutton.addEventListener('click', () => edit());
 gobutton.addEventListener('click', () => go());
-window.addEventListener('keypress', (e) => {
+window.addEventListener('keypress', e => {
 	if ((e.which || e.keyCode) == 13 || (e.which || e.keyCode) == 32) {
 		e.preventDefault();
 		if (document.body.className === 'underway') window.location.reload();
