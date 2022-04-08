@@ -19,8 +19,8 @@ function newrunners(a) {
 	window.location.reload();
 }
 
-if (window.location.hash && window.location.hash.length > 1) newrunners(window.location.hash.substring(1));
-else if (window.location.search && window.location.search.length > 1) newrunners(window.location.search.substring(1));
+if (window.location.hash && window.location.hash !== '#') newrunners(window.location.hash.substring(1));
+else if (window.location.search && window.location.search.length !== '?') newrunners(window.location.search.substring(1));
 else if (localStorage.runners) runners = localStorage.runners;
 else {
 	let input = window.prompt('Enter a comma-delimited list of runners\' initials');
