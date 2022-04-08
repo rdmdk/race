@@ -31,7 +31,7 @@ let field = document.querySelector('.s1 ul');
 let ap = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p'];
 
 let i = 0;
-runners = runners.split(',').filter(Boolean).sort((a, b) => a - b);
+runners = runners.split(',').filter(Boolean).sort().sort((a, b) => a - b); // Double sort to arrange alphabetically then numerically
 runners = [...(new Set(runners))];
 localStorage.runners = runners.toString();
 field.style.fontSize = 'calc(1rem / ' + runners.length + ')';
