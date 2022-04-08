@@ -1,6 +1,7 @@
-if (window.innerHeight > window.innerWidth) document.body.style.height = window.innerHeight + 'px';
-
 let runners;
+let portrait = window.innerHeight > window.innerWidth;
+
+if (portrait) document.body.style.height = window.innerHeight + 'px';
 
 function newrunners(a) {
 	runners = '';
@@ -34,7 +35,7 @@ let i = 0;
 runners = runners.split(',').filter(Boolean).sort().sort((a, b) => a - b); // Double sort to arrange alphabetically then numerically
 runners = [...(new Set(runners))];
 localStorage.runners = runners.toString();
-field.style.fontSize = 'calc(1rem / ' + runners.length + ')';
+field.style.fontSize = portrait ? 'calc(1rem / ' + (runners.length * 2) + ')' : 'calc(1rem / ' + runners.length + ')';
 runners.forEach(r => {
 	var ii;
 	if (i >= ap.length) i = 0;
