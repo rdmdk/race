@@ -14,13 +14,14 @@ function newrunners(a) {
 		}
 	} else runners = a;
 	localStorage.runners = runners.replace(/^\,|\,$/gm, '').replace(/\,\,+/gm, ',');
+	if (window.location.hash) window.location.hash = '';
+	if (window.location.search) window.location.search = '';
 	window.location.reload();
 }
 
-if (window.location.search && window.location.search !== '?') {
-	runners = window.location.search.substring(1);
-	window.location.search = '';
-} else if (localStorage.runners) runners = localStorage.runners;
+if (window.location.hash && window.location.hash !== '?') newrunners(window.location.hash.substring(1));
+else if (window.location.search && window.location.search !== '?') newrunners(window.location.search.substring(1));
+else if (localStorage.runners) runners = localStorage.runners;
 else {
 	let input = window.prompt('Enter a comma-delimited list of runners\' initials');
 	if (input !== null) newrunners(input);
