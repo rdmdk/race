@@ -11,6 +11,9 @@ body {
 
 .underway {pointer-events: none}
 
+main,
+footer {width: 100%}
+
 main {
 	display: flex;
 	align-items: flex-start;
@@ -135,7 +138,6 @@ li:last-child{padding-bottom: 0}
 footer {
 	font-size: 1rem;
 	line-height: 1.25em;
-	width: 100%;
 	min-height: 4em;
 	padding: 0 2rem 2rem;
 }
