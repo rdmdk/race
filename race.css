@@ -21,7 +21,9 @@ main {
 
 .s1 {
 	padding: 2rem;
-	flex-grow: 1;
+	flex: 1;
+	position: sticky;
+	top: 0;
 }
 
 .s2 div:not(:empty) {padding: 2rem 2rem 2rem 0}
