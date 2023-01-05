@@ -62,7 +62,8 @@ circles.forEach(c => {
 });
 
 if (localStorage.option) {
-	document.querySelector('footer .active').classList.remove('active');
+	const active_option = document.querySelector('footer .active');
+	active_option.classList.remove('active');
 	[...active_option.parentNode.children][Number(localStorage.option)].classList.add('active');
 }
 
