@@ -61,10 +61,18 @@ circles.forEach(c => {
 	});
 });
 
+if (localStorage.option) {
+	document.querySelector('footer .active').classList.remove('active');
+	[...active_option.parentNode.children][Number(localStorage.option)].classList.add('active');
+}
+
 options.forEach(o => {
 	o.addEventListener('click', () => {
 		document.querySelector('footer .active').classList.remove('active');
 		o.classList.add('active');
+		
+		const active_option = document.querySelector('footer .active');
+		localStorage.option = [...active_option.parentNode.children].indexOf(active_option);
 	});
 });
 function edit() {
