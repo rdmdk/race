@@ -137,7 +137,7 @@ footer {
 }
 
 footer span {
-	color: #ddd;
+	color: #ccc;
 	cursor: pointer;
 }
 
@@ -159,7 +159,7 @@ button {
 }
 .edit {
 	background: #fff;
-	color: #ddd;
+	color: #F44336;
 	margin-left: auto;
 }
 .go {
