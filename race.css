@@ -4,14 +4,17 @@ body {
 	font: 0 'Open Sans', arial, sans-serif;
 	color: #444;
 	user-select: none;
-	display: grid;
-	grid-template-rows: auto min-content;
+	display: flex;
+	flex-wrap: wrap;
 	overflow-x: hidden;
 }
 
 .underway {pointer-events: none}
 
-main {display: flex}
+main {
+	display: flex;
+	align-items: flex-start;
+}
 
 .s1 {
 	padding: 2rem;
@@ -132,6 +135,7 @@ li:last-child{padding-bottom: 0}
 footer {
 	font-size: 1rem;
 	line-height: 1.25em;
+	width: 100%;
 	min-height: 4em;
 	padding: 0 2rem 2rem;
 }
