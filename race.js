@@ -76,38 +76,44 @@ options.forEach(o => {
 		localStorage.option = [...active_option.parentNode.children].indexOf(active_option);
 	});
 });
+
 function edit() {
 	let newinput = window.prompt('Enter a comma-delimitted list of runners\' initials', localStorage.runners);
 	if (newinput != null && newinput !== localStorage.runners) newrunners(newinput);
 }
+
 function go() {
-	let t = 0;
-	let si1 = setInterval(() => t++, 100);
-	document.body.classList.add('underway');
-	circles.forEach(c => {
-		if (!c.classList.contains('disabled')) {
-			let d;
-			let e = Math.random().toFixed(2) + ',' + Math.random().toFixed(2) + ',' + Math.random().toFixed(2) + ',' + Math.random().toFixed(2);
-			if (window.location.hash.includes(c.innerText.toLowerCase())) d = (Math.random() * (25 - 20) + 20).toFixed(1); 
-			else d = (Math.random() * (30 - 10) + 10).toFixed(1);
-			c.style.transitionTimingFunction = 'cubic-bezier(' + e + ')';
-			c.style.transitionDuration = d + 's';
-			let si2 = setInterval(() => {
-				if (document.querySelectorAll('.finished').length === document.querySelectorAll('.s1 span:not(.disabled)').length) {
-					clearInterval(si1);
-					clearInterval(si2);
-					results.classList.add(document.querySelector('footer .active').innerText.toLowerCase());
-				} else if (c.offsetLeft + c.clientWidth >= field.clientWidth - 2) {
-					if (!c.classList.contains('finished')) {
-						c.classList.add('finished');
-						if (results.innerText.indexOf(t / 10) > -1) t++;
-						results.querySelector('div').insertAdjacentHTML('beforeend', '<p>' + c.innerText + '<span>' + (t / 10) + 's</span></p>');
+	if (field.querySelectorAll('.disabled').length + 1 >= runners.length) window.alert('Please unbench at least two racers');
+	else {
+		let t = 0;
+		let si1 = setInterval(() => t++, 100);
+		document.body.classList.add('underway');
+		circles.forEach(c => {
+			if (!c.classList.contains('disabled')) {
+				let d;
+				let e = Math.random().toFixed(2) + ',' + Math.random().toFixed(2) + ',' + Math.random().toFixed(2) + ',' + Math.random().toFixed(2);
+				if (window.location.hash.includes(c.innerText.toLowerCase())) d = (Math.random() * (25 - 20) + 20).toFixed(1); 
+				else d = (Math.random() * (30 - 10) + 10).toFixed(1);
+				c.style.transitionTimingFunction = 'cubic-bezier(' + e + ')';
+				c.style.transitionDuration = d + 's';
+				let si2 = setInterval(() => {
+					if (document.querySelectorAll('.finished').length === document.querySelectorAll('.s1 span:not(.disabled)').length) {
+						clearInterval(si1);
+						clearInterval(si2);
+						results.classList.add(document.querySelector('footer .active').innerText.toLowerCase());
+					} else if (c.offsetLeft + c.clientWidth >= field.clientWidth - 2) {
+						if (!c.classList.contains('finished')) {
+							c.classList.add('finished');
+							if (results.innerText.indexOf(t / 10) > -1) t++;
+							results.querySelector('div').insertAdjacentHTML('beforeend', '<p>' + c.innerText + '<span>' + (t / 10) + 's</span></p>');
+						}
 					}
-				}
-			}, 100);
-		}
-	});
+				}, 100);
+			}
+		});
+	}
 }
+
 editbutton.addEventListener('click', () => edit());
 gobutton.addEventListener('click', () => go());
 window.addEventListener('keypress', e => {
@@ -117,4 +123,5 @@ window.addEventListener('keypress', e => {
 		else go();
 	}
 });
+
 window.addEventListener('resize', () => document.body.style.height = window.innerHeight + 'px');
