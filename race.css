@@ -195,7 +195,7 @@ button {
 }
 
 @media (orientation:portrait) {
-	html {font-size: 4vw}
+	html {font-size: 2.5vh}
 
 	.underway .s2 {width: 45%}
 			
