@@ -180,7 +180,7 @@ button {
 .underway button {visibility: hidden}
 
 @media (orientation:landscape) {
-	html {font-size: 1.75vh}
+	html {font-size: 1.73vh}
 	
 	body {height: 100vh}
 	
