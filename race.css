@@ -129,10 +129,11 @@ li:last-child{padding-bottom: 0}
 
 .s2 p {
 	font-size: 1.25rem;
-	margin-bottom: 1.8rem;
 	display: flex;
 	justify-content: space-between;
 }
+
+.s2 p ~ p {margin-top: 1.8rem}
 
 .s2.first p:first-child,
 .s2.last p:last-child {color: #F44336}
