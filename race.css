@@ -225,7 +225,7 @@ button {
 		align-items: center;
 	}
 
-	footer span {margin-right: 0.5em}
+	footer span::after {content: "\00A0"}
 }
 
 @media (orientation: portrait) {
