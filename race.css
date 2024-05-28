@@ -103,6 +103,7 @@ li:last-child {padding-bottom: 0}
 	content: attr(title);
 	font-size: 0.75em;
 	line-height: 1;
+	text-transform: none;
 	white-space: nowrap;
 	color: #bbb;
 	transform: translate(1.5em, -50%);
