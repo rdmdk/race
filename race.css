@@ -101,7 +101,7 @@ li:last-child {padding-bottom: 0}
 
 .s1 span::after {
 	content: attr(title);
-	font-size: 0.75em;
+	font-size: 0.8em;
 	line-height: 1;
 	text-transform: none;
 	white-space: nowrap;
