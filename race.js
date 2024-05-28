@@ -11,7 +11,7 @@ function newrunners(a) {
 		const ci_a = 'ja,mf,ot,pl,pw,rh';
 		const ci_b = 'dd,hy,jw,mo,rt,wg';
 		const ci_c = 'ab,li,on,rd,vz';
-		runners = a === 'ci_a' ? ci_a + ',' + ci_c : a === ci_b ? ci_b + ',' + ci_c : ci_a + ',' + ci_b + ',' + ci_c;
+		runners = a === 'ci_a' ? ci_a + ',' + ci_c : a === 'ci_b' ? ci_b + ',' + ci_c : ci_a + ',' + ci_b + ',' + ci_c;
 	}
 	else if (a.match(/^[0-9]+$/g)) {
 		let t = a <= 1 ? 2 : parseInt(a);
