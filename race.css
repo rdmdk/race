@@ -99,6 +99,20 @@ li:last-child {padding-bottom: 0}
 	left: 0;
 }
 
+.s1 span::after {
+	content: attr(title);
+	font-size: 0.75em;
+	line-height: 1;
+	white-space: nowrap;
+	color: #bbb;
+	transform: translate(1em, -50%);
+	position: absolute;
+	top: 50%;
+	left: 100%;
+}
+
+.s1 span:not(:hover)::after {display: none}
+
 .s1 .disabled {background: #fff}
 
 .s1 span[style] {left: calc(100% - 3em)}
