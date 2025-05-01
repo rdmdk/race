@@ -96,7 +96,7 @@ function go() {
 		document.body.classList.add('underway');
 		circles.forEach(c => {
 			if (!c.classList.contains('disabled')) {
-				const d = (Math.random() * (15 - 5) + 5).toFixed(1);
+				const d = (Math.random() * (20 - 5) + 5).toFixed(1);
 				const e = Math.random().toFixed(2) + ',' + Math.random().toFixed(2) + ',' + Math.random().toFixed(2) + ',' + Math.random().toFixed(2);
 				c.style.transitionTimingFunction = 'cubic-bezier(' + e + ')';
 				c.style.transitionDuration = d + 's';
