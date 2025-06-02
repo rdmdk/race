@@ -10,7 +10,7 @@ function newrunners(a) {
 	else if (/ci[_ab]*$/gm.test(a)) {
 		const ci_a = 'mf,mq,pl,pw,rh,rs,so';
 		const ci_b = 'dd,fg,ho,wg';
-		const ci_c = 'ab,on,rd,vz';
+		const ci_c = 'ab,on,rd';
 		runners = (a === 'ci_a' ? ci_a : a === 'ci_b' ? ci_b : ci_a + ',' + ci_b) + ',' + ci_c;
 	}
 	else if (a.match(/^[0-9]+$/g)) {
