@@ -131,7 +131,11 @@ window.addEventListener('keypress', e => {
 	}
 });
 
+let resize_timeout;
 window.addEventListener('resize', () => {
-	document.body.style.height = window.innerHeight + 'px';
-	runner_size();
+	clearTimeout(resize_timeout);
+	resize_timeout = setTimeout(() => {
+		document.body.style.height = window.innerHeight + 'px';
+		runner_size();
+	}, 500);
 });
