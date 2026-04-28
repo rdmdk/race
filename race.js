@@ -9,7 +9,7 @@ function newrunners(a) {
 	else if (a === 'periodic') runners = 'h,he,li,be,b,c,n,o,f,ne,na,mg,al,si,p,s,cl,ar,k,ca,sc,ti,v,cr,mn,fe,co,ni,cu,zn,ga,ge,as,se,br,kr,rb,sr,y,zr,nb,mo,tc,ru,rh,pd,ag,cd,in,sn,sb,te,i,xe,cs,ba,la,ce,pr,nd,pm,sm,eu,gd,tb,dy,ho,er,tm,yb,lu,hf,ta,w,re,os,ir,pt,au,hg,tl,pb,bi,po,at,rn,fr,ra,ac,th,pa,u,np,pu,am,cm,bk,cf,es,fm,md,no,lr,rf,db,sg,bh,hs,mt,ds,rg,cn,nh,fl,mc,lv,ts,og';
 	else if (/ci[_ab]*$/gm.test(a)) {
 		const ci_a = 'hc,mf,mq,pl,so,ht,ab';
-		const ci_b = 'ar,dd,ek,fg,ho,rt,sm,sh';
+		const ci_b = 'ar,dd,ek,eo,fg,ho,rt,sm,sh';
 		const ci_c = 'on,rd';
 		runners = (a === 'ci_a' ? ci_a : a === 'ci_b' ? ci_b : ci_a + ',' + ci_b) + ',' + ci_c;
 	}
