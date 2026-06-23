@@ -35,7 +35,7 @@ else {
 }
 
 let field = document.querySelector('.s1 ul');
-let ap = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p'];
+let ap = 'abcdefghijklmnop'.split('');
 
 let i = 0;
 runners = runners.split(',').filter(Boolean).sort().sort((a, b) => a - b); // Double sort to arrange alphabetically then numerically
