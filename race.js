@@ -96,38 +96,22 @@ function go() {
         window.alert('Please unbench at least two racers');
         return;
     }
-
     document.body.classList.add('underway');
     let startTime = performance.now();
-
-    // Get all active runners and assign them random durations
     let activeRunners = Array.from(circles).filter(c => !c.classList.contains('disabled'));
-    
     activeRunners.forEach(c => {
         const duration = Math.random() * 10 + 5; // 5 to 15 seconds
         const bezier = Array.from({ length: 4 }, () => Math.random().toFixed(2)).join(',');
-        
         c.style.transitionTimingFunction = `cubic-bezier(${bezier})`;
         c.style.transitionDuration = `${duration}s`;
-        
-        // Trigger the movement class or style update
-        // (Assuming a class or transform moves them to the end)
     });
-
-    // Listen for who finishes first naturally using the native transitionend event
     activeRunners.forEach(c => {
         c.addEventListener('transitionend', function handler(e) {
             if (e.propertyName === 'transform' || e.propertyName === 'left') {
                 if (!c.classList.contains('finished')) {
                     c.classList.add('finished');
                     let elapsedTime = ((performance.now() - startTime) / 1000).toFixed(1);
-                    
-                    results.querySelector('div').insertAdjacentHTML(
-                        'beforeend', 
-                        `<p>${c.innerText}<span>${elapsedTime}s</span></p>`
-                    );
-
-                    // Check if all active runners have finished
+                    results.querySelector('div').insertAdjacentHTML('beforeend',`<p>${c.innerText}<span>${elapsedTime}s</span></p>`);
                     if (document.querySelectorAll('.s1 span:not(.disabled).finished').length === activeRunners.length) {
                         results.classList.add(document.querySelector('footer .active').innerText.toLowerCase());
                     }
