@@ -92,33 +92,50 @@ function edit() {
 }
 
 function go() {
-	if (field.querySelectorAll('.disabled').length + 1 >= runners.length) window.alert('Please unbench at least two racers');
-	else {
-		let t = 0;
-		let si1 = setInterval(() => t++, 100);
-		document.body.classList.add('underway');
-		circles.forEach(c => {
-			if (!c.classList.contains('disabled')) {
-				const d = (Math.random() * (15 - 5) + 5).toFixed(1);
-				const e = Math.random().toFixed(2) + ',' + Math.random().toFixed(2) + ',' + Math.random().toFixed(2) + ',' + Math.random().toFixed(2);
-				c.style.transitionTimingFunction = 'cubic-bezier(' + e + ')';
-				c.style.transitionDuration = d + 's';
-				let si2 = setInterval(() => {
-					if (document.querySelectorAll('.finished').length === document.querySelectorAll('.s1 span:not(.disabled)').length) {
-						clearInterval(si1);
-						clearInterval(si2);
-						results.classList.add(document.querySelector('footer .active').innerText.toLowerCase());
-					} else if (c.offsetLeft + c.clientWidth >= field.clientWidth - 2) {
-						if (!c.classList.contains('finished')) {
-							c.classList.add('finished');
-							if (results.innerText.indexOf(t / 10) > -1) t++;
-							results.querySelector('div').insertAdjacentHTML('beforeend', '<p>' + c.innerText + '<span>' + (t / 10) + 's</span></p>');
-						}
-					}
-				}, 100);
-			}
-		});
-	}
+    if (field.querySelectorAll('.disabled').length + 1 >= runners.length) {
+        window.alert('Please unbench at least two racers');
+        return;
+    }
+
+    document.body.classList.add('underway');
+    let startTime = performance.now();
+
+    // Get all active runners and assign them random durations
+    let activeRunners = Array.from(circles).filter(c => !c.classList.contains('disabled'));
+    
+    activeRunners.forEach(c => {
+        const duration = Math.random() * 10 + 5; // 5 to 15 seconds
+        const bezier = Array.from({ length: 4 }, () => Math.random().toFixed(2)).join(',');
+        
+        c.style.transitionTimingFunction = `cubic-bezier(${bezier})`;
+        c.style.transitionDuration = `${duration}s`;
+        
+        // Trigger the movement class or style update
+        // (Assuming a class or transform moves them to the end)
+    });
+
+    // Listen for who finishes first naturally using the native transitionend event
+    activeRunners.forEach(c => {
+        c.addEventListener('transitionend', function handler(e) {
+            if (e.propertyName === 'transform' || e.propertyName === 'left') {
+                if (!c.classList.contains('finished')) {
+                    c.classList.add('finished');
+                    let elapsedTime = ((performance.now() - startTime) / 1000).toFixed(1);
+                    
+                    results.querySelector('div').insertAdjacentHTML(
+                        'beforeend', 
+                        `<p>${c.innerText}<span>${elapsedTime}s</span></p>`
+                    );
+
+                    // Check if all active runners have finished
+                    if (document.querySelectorAll('.s1 span:not(.disabled).finished').length === activeRunners.length) {
+                        results.classList.add(document.querySelector('footer .active').innerText.toLowerCase());
+                    }
+                }
+                c.removeEventListener('transitionend', handler);
+            }
+        });
+    });
 }
 
 editbutton.addEventListener('click', () => edit());
